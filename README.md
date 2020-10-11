@@ -44,7 +44,7 @@ Open source web application for Invoice tracking to keep track of the invoice ra
   
   **Edit Invoice View**
   
-  ![Edit Invoice Screen](/edit.PNG)
+  ![Edit Invoice Screen](/editview.PNG)
   
   **Chart View of User**
   
