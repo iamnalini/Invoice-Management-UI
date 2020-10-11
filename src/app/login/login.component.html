@@ -1,0 +1,41 @@
+<div class="topnav">
+  <h1 style="color:rgb(255, 255, 255); margin-top:10px;" ><i>Invoice Management</i></h1>   
+</div>
+
+<div class="container">
+    <div class="logo"><b>Login</b></div>
+    <div class="login-item">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form form-login">
+      <div>
+        <div class="form-field">
+          <input name="email" formControlName="email" id="login-email" type="email" class="form-input" placeholder="Email ID" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>Email ID is required</div>
+        </div>
+      </div><br>
+      <div>
+        <div class="form-field">
+          <input name="password" formControlName="password" id="login-password" type="password" class="form-input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Password is required</div>
+            <div *ngIf="f.password.errors.minlength"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Password must be at least 8 characters</div>
+        </div>
+      </div><br>
+        
+        <div class="form-field">
+          <input type="submit" value="Log in">
+        </div>
+        <span *ngIf="allfield_error" style="color:#fc0606;"><i><b>All Fields are Required with atleast 6 characters in password</b></i></span>
+        <span *ngIf="invalid_error" style="color:#fc0606;"><i><b>Invalid Email ID and Password</b></i></span><br><br>
+        <div class="form-field">
+          <a [routerLink]="['/register']" style="color: black;"><u>Create a new Account</u></a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,173 @@
+<app-topbar></app-topbar>
+
+
+<ng-template #content let-modal> 
+  <div class="modal-header"> 
+      <h4 class="modal-title" 
+          id="modal-basic-title"> 
+          Create an Invoice 
+      </h4> 
+      <button type="button" class="close"
+              aria-label="Close" (click)= 
+              "modal.dismiss('Cross click')"> 
+
+          <span aria-hidden="true"> 
+              × 
+          </span> 
+      </button> 
+  </div> 
+  <div class="modal-body"> 
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form form-create">
+      <div>
+        <div class="form-field">
+          <input name="invoicename" formControlName="invoicename" id="invoicename" type="text" class="form-input" placeholder="Invoice Name" [ngClass]="{ 'is-invalid': submitted && f.invoicename.errors }" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.invoicename.errors" class="invalid-feedback">
+            <div *ngIf="f.invoicename.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>Invoice Name is required</div>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-field">
+          <input name="amount" pattern="[0-9]+(\.[0-9]+)?" formControlName="amount" id="amount" type="text" class="form-input" placeholder="Invoice Amount (Eg: xxxxx.xx)" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+            <div *ngIf="f.amount.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>Invoice Amount is required</div>
+        </div>
+      </div>
+      
+      <br/>
+        <div class="form-field">
+          <input type="submit" value="Create">
+        </div>
+        <br>
+        <span *ngIf="create_error" style="color:#fc0606;"><i><b>All Fields are Required with Valid Amount</b></i></span>
+        <span *ngIf="created" style="color:green;"><i><b>New Invoice Created!!</b></i></span>
+      </form>
+ 
+  </div> 
+
+</ng-template> 
+
+<ng-template #content_edit let-modal> 
+  <div class="modal-header"> 
+      <h4 class="modal-title" 
+          id="modal-basic-title-edit"> 
+          Edit an Invoice 
+      </h4> 
+      <button type="button" class="close"
+              aria-label="Close" (click)= 
+              "modal.dismiss('Cross click')"> 
+
+          <span aria-hidden="true"> 
+              × 
+          </span> 
+      </button> 
+  </div> 
+  <div class="modal-body"> 
+
+    <form [formGroup]="loginForm" (ngSubmit)="onEdit()" class="form form-create">
+      <div>
+        <div class="form-field">
+          <input name="invoicename" formControlName="invoicename" id="invoicename" type="text" class="form-input" placeholder="Invoice Name" [ngClass]="{ 'is-invalid': submitted && f.invoicename.errors }" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.invoicename.errors" class="invalid-feedback">
+            <div *ngIf="f.invoicename.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>Invoice Name is required</div>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-field">
+          <input name="amount" pattern="[0-9]+(\.[0-9]+)?" formControlName="amount" id="amount" type="text" class="form-input" placeholder="Invoice Amount (Eg: xxxxx.xx)" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" required ngModel>
+        </div>
+        
+        <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+            <div *ngIf="f.amount.errors.required" style="color:#fc0606"><i class="ui exclamation triangle icon"></i>Invoice Amount is required</div>
+        </div>
+      </div>
+      
+      <br/>
+        <div class="form-field">
+          <input type="submit" value="Edit">
+        </div>
+        <br>
+        <span *ngIf="edit_error" style="color:#FA5858;"><i><b>All Fields are Required with Valid Amount</b></i></span>
+        <span *ngIf="edited" style="color:green;"><i><b>Invoice Edited!!</b></i></span>
+      </form>
+ 
+  </div> 
+
+</ng-template> 
+ 
+<button class="btn btn-lg btn-outline-primary" id="create_button"
+  (click)="open(content)"> 
+  Create an Invoice
+</button> 
+<br>
+<br>
+  
+<div class="register-item">
+    <form #myform="ngForm" (ngSubmit)="filter(myform)" class="form form-create">
+      <table class="center_table">
+        <thead>
+        <th class="filterhead"><div class="form-field">
+          <input name="from" id="from" type="date" [max]="minDate" class="form-input" required ngModel>
+        </div></th>
+        <th class="filterhead"><div class="form-field">
+          <input name="to" id="to" type="date" [max]="minDate" class="form-input" required ngModel>
+        </div></th>
+        <th class="filterhead"><div class="form-field">
+          <input type="submit" value="Filter Invoice Data">
+        </div></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span *ngIf="allfield_error" style="color:#fc0606;"><i><b>Both From and To Dates are Required</b></i></span>
+            <span *ngIf="fromless_error" style="color:#fc0606;"><i><b>From Date should be less than or equal to To Date</b></i></span>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      </table>
+      
+    </form>
+  </div>
+
+        <div>
+
+          <table class="center_table">
+                  <thead > 
+                      <th>Invoice Name</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th></th>
+                      <th></th>
+                  </thead>
+                  <tbody class="tb">
+                      
+                          <ng-container *ngFor = "let ele of userdata; let i = index">
+                              <tr >
+                                  <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.invoice_name}}</td>
+                                  <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.date | date:'short':'IST'}}</td>
+                                  <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.amount}}</td>
+                                  <td><button class="ui button btn edit" (click)="open_edit(ele.invoice_id,content_edit)">Edit</button></td>
+                                  <td><button class="ui button btn delete" (click)="delete(ele.invoice_id)">Delete</button></td>
+                              </tr>
+                          </ng-container>
+                          <tr>
+                            <td><b>Total Amount</b></td>
+                            <td></td>
+                            <td>{{total}}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                  </tbody>
+          </table>
+      
+      </div>

@@ -1,0 +1,57 @@
+<app-admintopbar></app-admintopbar>
+<div class="register-item">
+    <form #myform="ngForm" (ngSubmit)="filter(myform)" class="form form-create">
+      <table class="center_table">
+        <thead>
+        <th class="filterhead"><div class="form-field">
+          <input name="from" id="from" type="date" [max]="minDate" class="form-input" required ngModel>
+        </div></th>
+        <th class="filterhead"><div class="form-field">
+          <input name="to" id="to" type="date" [max]="minDate" class="form-input" required ngModel>
+        </div></th>
+        <th class="filterhead"><div class="form-field">
+          <input type="submit" value="Filter Invoice Data">
+        </div></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span *ngIf="allfield_error" style="color:#fc0606;"><i><b>Both From and To Dates are Required</b></i></span>
+            <span *ngIf="fromless_error" style="color:#fc0606;"><i><b>From Date should be less than or equal to To Date</b></i></span>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      </table>
+    </form>
+  </div>
+<div>
+
+    <table class="center_table">
+            <thead > 
+                <th>User Name</th>
+                <th>Invoice Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+            </thead>
+            <tbody class="tb">
+                
+                    <ng-container *ngFor = "let ele of userdata; let i = index">
+                        <tr >
+                            <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.username}}</td>
+                            <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.invoice_name}}</td>
+                            <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.date | date:'short':'IST'}}</td>
+                            <td style="overflow: hidden; max-width: 200px; white-space: nowrap;">{{ele.amount}}</td>
+                        </tr>
+                    </ng-container>
+                    <tr>
+                        <td><b>Total Amount</b></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{total}}</td>
+                    </tr>
+            </tbody>
+    </table>
+
+</div>

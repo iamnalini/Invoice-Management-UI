@@ -1,0 +1,62 @@
+<div class="topnav">
+  <h1 style="color:rgb(255, 255, 255); margin-top:10px;" ><i>Invoice Management</i></h1>   
+  <div class="topnav-right">
+    <a href="/"><b>Login</b></a>
+  </div>
+</div>
+
+<div class="container">
+    <div class="logo"><b>Create a new Account!</b></div>
+    <div class="register-item">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form form-register">
+  
+        <div>
+        <div class="form-field">
+          <input name="username" id="register-username" formControlName="userName" type="text" class="form-input" placeholder="Username" ngModel required>
+        </div>
+        <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+            <div *ngIf="f.userName.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>User Name is required</div>
+        </div>
+    </div><br>
+
+    <div>
+        <div class="form-field">
+          <input name="email" id="register-email" formControlName="email" type="email" class="form-input" placeholder="Email Id" ngModel required>
+        </div>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Email is required</div>
+            <div *ngIf="f.email.errors.email"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Email must be a valid email address</div>
+        </div>
+    </div><br>
+
+    <div>
+        <div class="form-field">
+            <select name="role" id="register-role" class="form-input" formControlName="role" ngModel required>
+                <option value="">Select Role...</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+            <div *ngIf="f.role.errors.required" style="color:#FA5858"><i class="ui exclamation triangle icon"></i>Role is required</div>
+        </div>
+    </div><br>
+
+    <div>
+        <div class="form-field">
+          <input name="password" id="register-password" formControlName="password" type="password" class="form-input" placeholder="Password" ngModel required>
+        </div>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Password is required</div>
+            <div *ngIf="f.password.errors.minlength"  style="color:#FA5858;"><i class="ui exclamation triangle icon"></i>Password must be at least 6 characters</div>
+        </div>  
+    </div><br>
+
+        <div class="form-field">
+          <input type="submit" value="Register">
+        </div>
+        <span *ngIf="allfield_error" style="color:#fc0606;"><i><b>All Fields are Required with atleast 6 characters in password</b></i></span>
+        <span *ngIf="invalid_error" style="color:#fc0606;"><i><b>Email ID already Exists</b></i></span><br><br>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,105 @@
+.topnav h1 {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px 13px;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  background: linear-gradient(90deg, #339AC0 0%, #339AC0 26.48%, #4DAE95 100%);
+  margin-top: 0px;
+}
+
+.container {
+    
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    width:440px;
+    display: flex;  
+    flex-direction: column;
+    background-color: #7dc6e0;  
+            font-family: verdana;  
+            font-size: 32; 
+            margin:0;
+            margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
+  
+  .logo{
+    font-family: "museo-slab";  
+    font-size:27px;
+    text-align: center;
+    padding: 20px 20px 0;
+    margin:0;
+  }
+  
+  .login-item {
+      color: #ffff;
+      padding:25px 25px 0;
+      margin: 20px 20px 0;	
+      border-radius: 3px;
+  }
+  
+  input {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+  }
+  
+  .form input[type="password"], .form input[type="email"], .form input[type="submit"] {
+    width: 100%;
+  }
+  
+  .form-login label,
+  .form-login input[type="email"],
+  .form-login input[type="password"],
+  .form-login input[type="submit"] {
+    border-radius: 0.35rem;
+    padding: 1rem;
+    color: #3A3F44;  
+  }
+  
+  .form-login input[type="email"], .form-login input[type="password"] {
+    background-color: #ffffff;
+    
+  }
+  .form-login input[type="password"]:focus, .form-login input[type="email"]:hover, .form-login input[type="email"]:focus, .form-login input[type="password"]:hover {
+    background-color: #eeeeee;
+  }
+  .form-login input[type="submit"] {
+    background-color: #4472ad;
+    color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .form-login input[type="submit"]:focus, .form-login input[type="submit"]:hover {
+    background-color: #190f3b;
+  }
+  
+  .form-field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .text--center {
+    text-align: center;
+  }
+  

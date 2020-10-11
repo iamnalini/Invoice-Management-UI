@@ -1,0 +1,119 @@
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.topnav h1 {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px 13px;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  background: linear-gradient(90deg, #339AC0 0%, #339AC0 26.48%, #4DAE95 100%);
+  margin-top: 0px;
+  margin-bottom:20px;
+}
+
+.container {
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    width:440px;
+    display: flex;  
+    flex-direction: column;
+    background-color: #7dc6e0 ;  
+            
+            font-family: verdana;  
+            font-size: 32; 
+            
+            margin:0;
+            margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
+  
+  .logo{
+    font-family: "museo-slab";  
+    font-size:27px;
+    text-align: center;
+    padding: 15px 15px 0;
+    margin:0;
+  }
+  
+  .register-item {
+      color: #ffff;
+      padding: 15px 15px 0;
+      margin: 15px 15px 0;	
+      border-radius: 3px;
+  }
+  
+  input, select {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+  }
+  
+  .form input[type="password"], .form input[type="email"], select, .form input[type="text"], .form input[type="submit"] {
+    width: 100%;
+  }
+  
+  .form-register input[type="text"],
+  .form-register input[type="email"],
+  .form-register input[type="password"],
+  .form-register input[type="submit"],
+  select {
+    border-radius: 0.25rem;
+    padding: 0.7rem;
+    color: #3A3F44;  
+  }
+  
+  .form-register input[type="email"], .form-register input[type="password"], select, .form-register input[type="text"] {
+    background-color: #ffffff;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .form-register input[type="email"]:focus, .form-register input[type="email"]:hover, select, .form-register input[type="password"]:focus, .form-register input[type="password"]:hover, .form-register input[type="text"]:focus, .form-register input[type="text"]:hover {
+    background-color: #eeeeee;
+  }
+  .form-register input[type="submit"] {
+    background-color: #4472ad;
+    color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .form-register input[type="submit"]:focus, .form-register input[type="submit"]:hover {
+    background-color: #120a2e;
+  }
+  .form-field {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .text--center {
+    text-align: center;
+  }
