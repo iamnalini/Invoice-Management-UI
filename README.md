@@ -28,41 +28,41 @@ Open source web application for Invoice tracking to keep track of the invoice ra
 
   **Register**
   
-  ![Register Screen](/register.png)
+  ![Register Screen](/register.PNG)
   
   **Login**
   
-  ![Login Screen](/login.png)
+  ![Login Screen](/login.PNG)
   
   **User View**
   
-  ![User View Screen](/userview.png)
+  ![User View Screen](/userview.PNG)
   
   **Create Invoice View**
   
-  ![Create Invoice Screen](/createinvoice.png)
+  ![Create Invoice Screen](/createinvoice.PNG)
   
   **Edit Invoice View**
   
-  ![Edit Invoice Screen](/edit.png)
+  ![Edit Invoice Screen](/edit.PNG)
   
   **Chart View of User**
   
-  ![Bar graph for User Screen](/usergraph.png)
+  ![Bar graph for User Screen](/usergraph.PNG)
   
   **Admin View**
   
-  ![Admin View Screen](/adminview.png)
+  ![Admin View Screen](/adminview.PNG)
   
   **Filter Option**
   
-  ![Filter Option Screen](/filteroption.png)
+  ![Filter Option Screen](/filteroption.PNG)
   
   **Chart View of Admin**
   
-  ![Admin Bargraph 1 Screen](/admingraph1.png)
+  ![Admin Bargraph 1 Screen](/admingraph1.PNG)
   
-  ![Admin Bargraph 2 Screen](/admingraph2.png)
+  ![Admin Bargraph 2 Screen](/admingraph2.PNG)
   
   
 **WHY**
