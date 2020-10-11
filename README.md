@@ -28,7 +28,7 @@ Open source web application for Invoice tracking to keep track of the invoice ra
 
   **Register**
   
-  ![Register Screen](https://github.com/iamnalini/Invoice-Management-UI/register.png)
+  ![Register Screen](/register.png)
   
   **Login**
   
