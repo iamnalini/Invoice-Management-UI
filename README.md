@@ -12,15 +12,15 @@ Open source web application for Invoice tracking to keep track of the invoice ra
   
     *	Can create, edit and delete their own invoice.
     *	Can view the invoices in the tabular format.
-    *	In tabular view, the filter option is enabled for user to view the invoices in       selected date range.
-    *	In bar chart view, list the invoices with date on x-axis and number of invoices       on y-axis.
+    *	In tabular view, the filter option is enabled for user to view the invoices in selected date range.
+    *	In bar chart view, list the invoices with date on x-axis and number of invoices on y-axis.
 
   **ADMIN**
   
     *	Can only view invoices of all users.
     *	Can view your invoices in the tabular format.
-    *	In tabular view the filter option is enabled for admin to view the invoices in       selected date range.
-    *	Can view the bar charts with date on x-axis and number of invoices on y-axis         and also username on x-axis and number of invoices on y-axis.
+    *	In tabular view the filter option is enabled for admin to view the invoices in selected date range.
+    *	Can view the bar charts with date on x-axis and number of invoices on y-axis and also username on x-axis and number of invoices on y-axis.
 
 
 **SCREENSHOTS**
@@ -28,7 +28,7 @@ Open source web application for Invoice tracking to keep track of the invoice ra
 
   **Register**
   
-  ![Register Screen](/register.png)
+  ![Register Screen](https://github.com/iamnalini/Invoice-Management-UI/register.png)
   
   **Login**
   
